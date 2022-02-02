@@ -79,23 +79,23 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dfcd49t9s6t4bu',
-#         'USER': 'bhrkvtxhbnicjd',
-#         'HOST': 'ec2-3-218-158-102.compute-1.amazonaws.com',
-#         'PORT': 5432,
-#         'PASSWORD': '1945c0bf49b8c48856cd8f8cabf21ed1f1ea4114cc89bde311d98c4156668b08',
-#     }
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
 # }
+
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'd7rgllem7c9r5j',
+         'USER': 'ukdemuwazgpuyf',
+         'HOST': 'ec2-35-171-41-147.compute-1.amazonaws.com',
+         'PORT': 5432,
+         'PASSWORD': 'daf781b4b9e06df9a2864cdb6ead7b4c9c64f9fe69a3bb661e52039d088154fb',
+     }
+ }
 
 
 # Password validation
