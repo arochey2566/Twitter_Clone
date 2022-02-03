@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_forum.urls'
@@ -85,6 +86,17 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 # }
+
+# DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.postgresql',
+#          'NAME': 'd38dntsfk1cv3p',
+#          'USER': 'kpquyqubzglpob',
+#          'HOST': 'ec2-34-233-157-189.compute-1.amazonaws.com',
+#          'PORT': 5432,
+#          'PASSWORD': 'ee900e0ff44016b582b4ad4fc3b91a4fe75e22a7db8b2c88cc12b2d14aaae2bc',
+#      }
+#  }
 
 DATABASES = {
      'default': {
@@ -135,8 +147,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR/'static'
+    os.path.join(BASE_DIR, "static"),
+    # BASE_DIR,"static"
+    # '/var/www/static/',
 ]
+
 
 cloudinary.config( 
   cloud_name = "dpwdbpoqt", 
@@ -149,3 +164,10 @@ cloudinary.config(
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
