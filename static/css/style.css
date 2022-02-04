@@ -66,6 +66,7 @@ body {
 }
 .Image {
   height: 350px;
+  max-width: 100%;
 }
 #btn {
   width: 20%;

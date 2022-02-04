@@ -19,14 +19,15 @@
           value="{{posts.name}}"
           required
         /><br />
-        <textarea name="body" placeholder="{{posts.body}}" required></textarea>
+        <textarea name="body" placeholder="{{posts.body}}" ></textarea>
         <br />
-        <input id="uploadfile" type="file" name="image" />
+        
         {% if posts.image.url %}
         <img class="Image" src="{{posts.image.url}}" />
         <!-- style="width: 370px; height: 370px" -->
 
         {% endif %}
+        <input id="uploadfile" type="file" name="image" />
         <br />
         <div class="tweet">
           <a href="{% url 'index' %}" id="btnn" type="submit">Cancel</a>
